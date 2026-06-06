@@ -28,8 +28,6 @@ body {
   flex-direction: column;
   gap: 1rem;
   align-items: flex-start;
-  flex: 1;
-  min-width: 200px;
 }
 
 /* ── Generic RollableTable ────────────────────────────────────────────────── */
@@ -39,7 +37,6 @@ body {
   border-radius: 6px;
   overflow: hidden;
   min-width: 160px;
-  width: 100%;
 }
 
 .rollable-table__title {
@@ -99,4 +96,9 @@ body {
 .rollable-table__keyword-result {
   padding: 0.3rem 0.6rem;
   text-align: center;
+}
+
+/* ── Village column: equal table widths ──────────────────────────────────── */
+#tables > .tables-column:nth-child(3) .rollable-table {
+  width: 100%;
 }
