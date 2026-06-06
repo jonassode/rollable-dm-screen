@@ -1,0 +1,86 @@
+/* ── Reset & base ─────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* ── Layout ───────────────────────────────────────────────────────────────── */
+#tables {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* ── Generic RollableTable ────────────────────────────────────────────────── */
+.rollable-table {
+  background: #16213e;
+  border: 1px solid #0f3460;
+  border-radius: 6px;
+  overflow: hidden;
+  min-width: 160px;
+}
+
+.rollable-table__title {
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.6rem;
+  background: #0f3460;
+  color: #e94560;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+}
+
+.rollable-table__title:hover,
+.rollable-table__title:focus {
+  background: #e94560;
+  color: #fff;
+  outline: none;
+}
+
+.rollable-table__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rollable-table__row {
+  border-top: 1px solid #0f3460;
+  transition: background 0.15s;
+}
+
+.rollable-table__die {
+  padding: 0.3rem 0.5rem;
+  text-align: center;
+  color: #888;
+  font-size: 0.75rem;
+  width: 1.8rem;
+}
+
+.rollable-table__label {
+  padding: 0.3rem 0.6rem 0.3rem 0.2rem;
+  font-size: 0.85rem;
+}
+
+/* Highlighted row */
+.rollable-table__row--active {
+  background: #e94560;
+  color: #fff;
+}
+
+.rollable-table__row--active .rollable-table__die {
+  color: #fff;
+}
