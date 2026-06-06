@@ -76,7 +76,7 @@ if (tablesEl) {
   // ── Village - What's Happening ────────────────────────────────────────────────
   RollableTable({
     title: "Village - What's Happening",
-    items: ["Fight / Argument", "Show", "Guarding", "Chase", "Talking silently", "Acting Shady", "A show/spectacle", "Selling/Buying"],
+    items: ["Fight / Argument", "A disappearence", "Guarding", "Chase", "Talking silently", "Acting Shady", "A show/spectacle", "Selling/Buying"],
     container: villageColEl,
   });
 
