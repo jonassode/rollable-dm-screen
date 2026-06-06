@@ -11,6 +11,17 @@
  * @returns {{ roll: Function, highlight: Function }}
  */
 export function RollableTable({ title, items, container }) {
+  // ── Validate inputs ────────────────────────────────────────────────────────
+  if (typeof title !== "string" || title.trim() === "") {
+    throw new TypeError("RollableTable: `title` must be a non-empty string.");
+  }
+  if (!Array.isArray(items) || items.length === 0) {
+    throw new TypeError("RollableTable: `items` must be a non-empty array.");
+  }
+  if (!(container instanceof Element)) {
+    throw new TypeError("RollableTable: `container` must be a valid DOM Element.");
+  }
+
   // ── Build DOM ──────────────────────────────────────────────────────────────
   const wrapper = document.createElement("div");
   wrapper.className = "rollable-table";
