@@ -84,3 +84,9 @@ body {
 .rollable-table__row--active .rollable-table__die {
   color: #fff;
 }
+
+/* Keyword result cell (no die column — reset left padding and centre text) */
+.rollable-table__keyword-result {
+  padding: 0.3rem 0.6rem;
+  text-align: center;
+}
