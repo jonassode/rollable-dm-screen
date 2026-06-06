@@ -23,6 +23,13 @@ body {
   gap: 1rem;
 }
 
+.tables-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
 /* ── Generic RollableTable ────────────────────────────────────────────────── */
 .rollable-table {
   background: #16213e;
