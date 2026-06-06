@@ -97,3 +97,8 @@ body {
   padding: 0.3rem 0.6rem;
   text-align: center;
 }
+
+/* ── Village column: equal table widths ──────────────────────────────────── */
+#tables > .tables-column:nth-child(3) .rollable-table {
+  width: 100%;
+}
