@@ -102,3 +102,28 @@ body {
 #tables > .tables-column:nth-child(3) .rollable-table {
   width: 100%;
 }
+
+/* ── Clear Button ─────────────────────────────────────────────────────────── */
+.clear-button {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #0f3460;
+  color: #e94560;
+  border: 1px solid #0f3460;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.clear-button:hover,
+.clear-button:focus {
+  background: #e94560;
+  color: #fff;
+  outline: none;
+}
