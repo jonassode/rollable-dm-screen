@@ -1,23 +1,65 @@
 import { RollableTable } from "./RollableTable.js";
 import { KeywordTable } from "./KeywordTable.js";
+import { DiceTable } from "./DiceTable.js";
+import { ClearButton } from "./ClearButton.js";
 
 // ── Oracle D6 ────────────────────────────────────────────────────────────────
 const tablesEl = document.getElementById("tables");
 if (tablesEl) {
-  // ── Column 1: Oracle + Keyword ──────────────────────────────────────────────
+  // Store references to all tables that can be cleared
+  const clearableComponents = [];
+
+  // ── Column 1: Oracle + Keyword + Dice ──────────────────────────────────────
   const oracleColEl = document.createElement("div");
   oracleColEl.className = "tables-column";
   tablesEl.append(oracleColEl);
 
-  RollableTable({
-    title: "Oracle - D6",
-    items: ["Yes, and", "Yes", "Yes, but", "No, but", "No", "No, and"],
-    container: oracleColEl,
-  });
+  clearableComponents.push(
+    RollableTable({
+      title: "Oracle - D6",
+      items: ["Yes, and", "Yes", "Yes, but", "No, but", "No", "No, and"],
+      container: oracleColEl,
+    })
+  );
 
   // ── Keyword Generator ───────────────────────────────────────────────────────
-  KeywordTable({
-    title: "Key word",
+  clearableComponents.push(
+    KeywordTable({
+      title: "Key word",
+      container: oracleColEl,
+    })
+  );
+
+  // ── Dice Tables ─────────────────────────────────────────────────────────────
+  const diceTypes = [
+    { title: "D4", max: 4 },
+    { title: "D6", max: 6 },
+    { title: "D8", max: 8 },
+    { title: "D10", max: 10 },
+    { title: "D12", max: 12 },
+    { title: "D20", max: 20 },
+  ];
+
+  diceTypes.forEach(({ title, max }) => {
+    clearableComponents.push(
+      DiceTable({
+        title,
+        max,
+        container: oracleColEl,
+      })
+    );
+  });
+
+  // ── Clear Button ────────────────────────────────────────────────────────────
+  ClearButton({
+    title: "Clear",
+    onClick: () => {
+      clearableComponents.forEach((component) => {
+        if (component.clear) {
+          component.clear();
+        }
+      });
+    },
     container: oracleColEl,
   });
 

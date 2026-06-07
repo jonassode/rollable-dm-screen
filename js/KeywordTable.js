@@ -55,6 +55,11 @@ export function KeywordTable({ title, container }) {
     tr.classList.add("rollable-table__row--active");
   }
 
+  function clear() {
+    tdLabel.textContent = "";
+    tr.classList.remove("rollable-table__row--active");
+  }
+
   // ── Events ─────────────────────────────────────────────────────────────────
   heading.addEventListener("click", roll);
   heading.addEventListener("keydown", (e) => {
@@ -65,5 +70,5 @@ export function KeywordTable({ title, container }) {
   });
 
   // ── Public API ─────────────────────────────────────────────────────────────
-  return { roll };
+  return { roll, clear };
 }
